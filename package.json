@@ -13,7 +13,10 @@
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\""
   },
   "dependencies": {
+    "@material-ui/core": "^4.3.2",
+    "@material-ui/styles": "^4.3.0",
     "gatsby": "^2.13.64",
+    "gatsby-plugin-material-ui": "^2.1.5",
     "gatsby-source-filesystem": "^2.1.9",
     "gatsby-transformer-csv": "^2.1.2",
     "react": "^16.9.0",
