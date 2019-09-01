@@ -1,18 +1,28 @@
-import React from "react"
+import React, { useState } from "react"
 import { graphql } from "gatsby"
 import BookBar from "../components/header"
 import BookCard from "../components/bookCard"
+import Toggle from "../components/Toggle"
 
 export default ({ data }) => {
+  const [isKaniner, setIsKaniner] = useState(false)
   return (
     <div>
       <BookBar />
+      <Toggle isToggled={isKaniner} setToggle={setIsKaniner} />
       <div>
-        {data.allBookShelfSpreadsheetCsv.edges.map(({ node }) => (
-          <div key={node.id}>
-            <BookCard book={node} />
-          </div>
-        ))}
+        {data.allBookShelfSpreadsheetCsv.nodes
+          .filter(book => {
+            if (isKaniner) {
+              return book.Enhj_rninger_eller_kaniner == "kaniner"
+            } else {
+              return true
+            }
+          })
+
+          .map(book => (
+            <BookCard key={book.id} book={book} />
+          ))}
       </div>
     </div>
   )
@@ -22,15 +32,13 @@ export const query = graphql`
     allBookShelfSpreadsheetCsv(
       sort: { fields: Navn__lest_inn_for, order: DESC }
     ) {
-      edges {
-        node {
-          Norsk_navn
-          Engelsk_navn
-          Enhj_rninger_eller_kaniner
-          Type_bok
-          ForsideBilde
-          Lenke_til_boka
-        }
+      nodes {
+        Norsk_navn
+        Engelsk_navn
+        Enhj_rninger_eller_kaniner
+        Type_bok
+        ForsideBilde
+        Lenke_til_boka
       }
     }
   }
