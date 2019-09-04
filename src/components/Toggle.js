@@ -1,12 +1,12 @@
-import React from "react"
+// import React from "react"
 
-const Toggle = ({ isToggled, setToggle }) => {
-  return (
-    <div>
-      <button onClick={() => setToggle(!isToggled)}>Kaninbøker</button>
-      {isToggled && <h2>Kaninbøker</h2>}
-    </div>
-  )
-}
+// const Toggle = ({ erKaninete, setKanin }) => {
+//   return (
+//     <div>
+//       <button onClick={() => setKanin(!erKaninete)}>Kaninete bøker</button>
+//       {erKaninete && <h2>Kaninete bøker</h2>}
+//     </div>
+//   )
+// }
 
-export default Toggle
+// export default Toggle

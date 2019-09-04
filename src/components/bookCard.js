@@ -21,7 +21,7 @@ const useStyles = makeStyles(theme => ({
   },
 }))
 
-export default function BookCard({ book }) {
+export default function BookCard({ book, erKaninete, setKanin }) {
   const classes = useStyles()
 
   return (
@@ -40,6 +40,7 @@ export default function BookCard({ book }) {
             <Chip label={book.Engelsk_navn} className={classes.chip} />
             <Chip
               label={book.Enhj_rninger_eller_kaniner}
+              onClick={() => setKanin(!erKaninete)}
               className={classes.chip}
             />
             <Chip label={book.Type_bok} className={classes.chip} />
