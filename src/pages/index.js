@@ -9,12 +9,18 @@ export default ({ data }) => {
   return (
     <div>
       <BookBar />
-      {erKaninete && <h2>Kaninete bøker</h2>}
+      {erKaninete && <h2>erKaninete Bøker</h2>}
       <div>
         {data.allBookShelfSpreadsheetCsv.nodes
           .filter(book => {
-            if (erKaninete) {
+            if (erKaninete === "kaniner") {
               return book.Enhj_rninger_eller_kaniner == "kaniner"
+            } else if (erKaninete === "Enhjørninger") {
+              return book.Enhj_rninger_eller_kaniner == "Enhjørninger"
+            } else if (erKaninete === "Enhjørninger eller kaniner") {
+              return (
+                book.Enhj_rninger_eller_kaniner == "Enhjørninger eller kaniner"
+              )
             } else {
               return true
             }

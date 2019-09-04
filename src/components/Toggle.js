@@ -1,3 +1,12 @@
+// if (setKanin === "kaniner") {
+//     return book.Enhj_rninger_eller_kaniner == "kaniner"
+//   } else if (setKanin === "Enhjørninger") {
+//     return book.Enhj_rninger_eller_kaniner == "Enhjørninger"
+//   } else {
+//     return true
+//   }
+// })
+
 // import React from "react"
 
 // const Toggle = ({ erKaninete, setKanin }) => {
