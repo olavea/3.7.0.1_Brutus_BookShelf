@@ -14,5 +14,7 @@ module.exports = {
       },
     },
     `gatsby-transformer-csv`,
+    `gatsby-plugin-material-ui`,
+    `gatsby-plugin-netlify`,
   ],
 }
