@@ -5,22 +5,24 @@ import BookCard from "../components/bookCard"
 // import Toggle from "../components/Toggle"
 
 export default ({ data }) => {
-  const [erKaninete, setKanin] = useState(false)
+  const [isUnicorny, setUnicorn] = useState(false)
   return (
     <div>
       <BookBar />
-      {erKaninete && <h2>erKaninete Bøker</h2>}
+      {isUnicorny && <h2>Unicorny Books</h2>}
       <div>
         {data.allBookShelfSpreadsheetCsv.nodes
           .filter(book => {
-            if (erKaninete === "kaniner") {
+            if (isUnicorny === "kaniner") {
               return book.Enhj_rninger_eller_kaniner == "kaniner"
-            } else if (erKaninete === "Enhjørninger") {
-              return book.Enhj_rninger_eller_kaniner == "Enhjørninger"
-            } else if (erKaninete === "Enhjørninger eller kaniner") {
-              return (
-                book.Enhj_rninger_eller_kaniner == "Enhjørninger eller kaniner"
-              )
+            } else if (isUnicorny === "Enhjørning") {
+              return book.Enhj_rninger_eller_kaniner == "Enhjørning"
+            } else if (isUnicorny === "katt") {
+              return book.Enhj_rninger_eller_kaniner == "katt"
+            } else if (isUnicorny === "hund") {
+              return book.Enhj_rninger_eller_kaniner == "hund"
+            } else if (isUnicorny === "elefant") {
+              return book.Enhj_rninger_eller_kaniner == "elefant"
             } else {
               return true
             }
@@ -30,8 +32,8 @@ export default ({ data }) => {
             <BookCard
               key={book.id}
               book={book}
-              erKaninete={erKaninete}
-              setKanin={setKanin}
+              erKaninete={isUnicorny}
+              setKanin={setUnicorn}
             />
           ))}
       </div>
