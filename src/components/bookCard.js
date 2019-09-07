@@ -47,6 +47,8 @@ export default function BookCard({ book, erKaninete, setKanin }) {
             />
 
             <Chip label={book.Type_bok} className={classes.chip} />
+            <Chip label={book.passord} className={classes.chip} />
+            <Chip label={book.Pris} className={classes.chip} />
           </Typography>
         </CardContent>
       </CardActionArea>
@@ -57,8 +59,17 @@ export default function BookCard({ book, erKaninete, setKanin }) {
           className={classes.button}
           size="small"
         >
-          Lytt til {""}
+          Gå til {""}
           {book.Norsk_navn}
+        </Button>
+        <Button
+          href={book.Kj_p_boka}
+          variant="contained"
+          className={classes.button}
+          size="small"
+        >
+          Bestill originalboka {""}
+          {book.Pris}
         </Button>
       </CardActions>
     </Card>
