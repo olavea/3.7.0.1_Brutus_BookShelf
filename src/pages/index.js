@@ -23,8 +23,8 @@ export default ({ data }) => {
               return book.Enhj_rninger_eller_kaniner == "hund"
             } else if (isUnicorny === "elefant") {
               return book.Enhj_rninger_eller_kaniner == "elefant"
-            } else if (isUnicorny === "trenger passord") {
-              return book.passord == "trenger passord"
+            } else if (isUnicorny === "har passord") {
+              return book.passord == "har passord"
             } else if (isUnicorny === "trenger ikke passord") {
               return book.passord == "trenger ikke passord"
             } else if (isUnicorny === "bare lydbok") {
