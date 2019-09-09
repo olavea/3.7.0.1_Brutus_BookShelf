@@ -1,3 +1,6 @@
+// if (book.Pris === !"no input") {
+//     return
+
 // if (setKanin === "kaniner") {
 //     return book.Enhj_rninger_eller_kaniner == "kaniner"
 //   } else if (setKanin === "Enhjørninger") {
