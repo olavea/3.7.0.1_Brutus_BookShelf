@@ -10,6 +10,9 @@ import Typography from "@material-ui/core/Typography"
 import Chip from "@material-ui/core/Chip"
 
 const useStyles = makeStyles(theme => ({
+  button: {
+    margin: theme.spacing(1),
+  },
   card: {
     maxWidth: 345,
   },
@@ -37,22 +40,36 @@ export default function BookCard({ book, erKaninete, setKanin }) {
             {book.Norsk_navn}
           </Typography>
           <Typography variant="body2" color="textSecondary" component="p">
-            <Chip label={book.Engelsk_navn} className={classes.chip} />
             <Chip
               label={book.Enhj_rninger_eller_kaniner}
-              onClick={() => setKanin(!erKaninete)}
+              onClick={() => setKanin(book.Enhj_rninger_eller_kaniner)}
               className={classes.chip}
             />
+
             <Chip label={book.Type_bok} className={classes.chip} />
+            <Chip label={book.passord} className={classes.chip} />
+            <Chip label={book.Pris} className={classes.chip} />
           </Typography>
         </CardContent>
       </CardActionArea>
       <CardActions>
-        <Button size="small" color="primary">
-          Share
+        <Button
+          href={book.Lenke_til_boka}
+          variant="contained"
+          className={classes.button}
+          size="small"
+        >
+          Gå til {""}
+          {book.Norsk_navn}
         </Button>
-        <Button size="small" color="primary">
-          Read at: {book.Lenke_til_boka}
+        <Button
+          href={book.Kj_p_boka}
+          variant="contained"
+          className={classes.button}
+          size="small"
+        >
+          Bestill originalboka {""}
+          {book.Pris}
         </Button>
       </CardActions>
     </Card>
