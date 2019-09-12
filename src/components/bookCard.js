@@ -45,17 +45,17 @@ export default function BookCard({ book, erKaninete, setKanin }) {
               onClick={() => setKanin(book.Enhj_rninger_eller_kaniner)}
               className={classes.chip}
             />
-
-            <Chip
-              label={book.Type_bok}
-              onClick={() => setKanin(book.Type_bok)}
-              className={classes.chip}
-            />
             <Chip
               label={book.passord}
               onClick={() => setKanin(book.passord)}
               className={classes.chip}
             />
+            <Chip
+              label={book.Type_bok}
+              onClick={() => setKanin(book.Type_bok)}
+              className={classes.chip}
+            />
+
             <Chip label={book.Pris} className={classes.chip} />
           </Typography>
         </CardContent>
