@@ -2,14 +2,19 @@ import React, { useState } from "react"
 import { graphql } from "gatsby"
 import BookBar from "../components/header"
 import BookCard from "../components/bookCard"
-// import Toggle from "../components/Toggle"
 
 export default ({ data }) => {
   const [isUnicorny, setUnicorn] = useState(false)
   return (
     <div>
       <BookBar />
-      {isUnicorny && <h2>Unicorny Books</h2>}
+      {isUnicorny === "kaniner" && <h2>kaninente Bøker 🐰</h2>}
+      {isUnicorny === "Enhjørning" && <h2>Unicorny Books 🦄</h2>}
+      {isUnicorny === "har passord" && <h2>Har du passord? 🔑</h2>}
+      {isUnicorny === "trenger ikke passord" && (
+        <h2>Du trenger ikke passord 😺👍</h2>
+      )}
+
       <div>
         {data.allBookShelfSpreadsheetCsv.nodes
           .filter(book => {
@@ -33,6 +38,16 @@ export default ({ data }) => {
               return book.Type_bok == "bare bildebok"
             } else if (isUnicorny === "bildebok og lydbok") {
               return book.Type_bok == "bildebok og lydbok"
+            } else if (
+              isUnicorny === "kaniner" &&
+              isUnicorny === "har passord"
+            ) {
+              return (
+                book.Enhj_rninger_eller_kaniner == "kaniner" &&
+                book.passord == "har passord"
+              )
+            } else if (isUnicorny === "Enhjørning") {
+              return book.Enhj_rninger_eller_kaniner == "Enhjørning"
             } else {
               return true
             }
