@@ -1,3 +1,33 @@
+
+{
+    if (isUnicorny === "kaniner") {
+} else if (
+    [isUnicorny === "kaniner", isUnicorny === "har passord"]
+  ) {
+    return (
+      book.Enhj_rninger_eller_kaniner == "kaniner" &&
+      book.passord == "har passord"
+    )
+  } else if (
+    [isUnicorny === "Enhjørning", isUnicorny === "har passord"]
+
+
+    isUnicorny === "Enhjørning") {
+    return (book.Enhj_rninger_eller_kaniner == "Enhjørning" &&
+    book.passord == "har passord")
+  } else {
+    return true
+  }
+}
+
+
+
+[isUnicorny === "kaniner", isUnicorny === "har passord"]
+
+contains kaniner og && "har passord"
+
+Kan jeg ha denne syntaxen?
+
 // if (book.Pris === !"no input") {
 //     return
 
