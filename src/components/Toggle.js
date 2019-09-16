@@ -1,32 +1,73 @@
 
-{
-    if (isUnicorny === "kaniner") {
-} else if (
-    [isUnicorny === "kaniner", isUnicorny === "har passord"]
-  ) {
+import React, { useState } from "react"
+
+const App = () => {
+    const [isUnicorny, setUnicorn] = useState('')
+
     return (
-      book.Enhj_rninger_eller_kaniner == "kaniner" &&
-      book.passord == "har passord"
+      <div className="main-wrapper">
+
+
+        <form onSubmit={event => {
+          event.preventDefault();
+          formSubmit(isUnicorny, setUnicorn );
+
+
+        }}
+
+          <input
+            type="text"
+            onChange={event setUnicorn(event.target.value)}
+            value={isUnicorny}
+            />
+        </form>
+      </div>
+
     )
-  } else if (
-    [isUnicorny === "Enhjørning", isUnicorny === "har passord"]
-
-
-    isUnicorny === "Enhjørning") {
-    return (book.Enhj_rninger_eller_kaniner == "Enhjørning" &&
-    book.passord == "har passord")
-  } else {
-    return true
-  }
+    const formSubmit = ( value, setValue ) = > {
+        console.log('something + value +');
+        setValue('')
+    }
 }
 
+export default Toggle
 
 
-[isUnicorny === "kaniner", isUnicorny === "har passord"]
+// let chip = "kaniner"
+// let isUnicorny = "har passord"
 
-contains kaniner og && "har passord"
+// {
+//     if (isUnicorny === "kaniner") {
+// } else if (
+//     [isUnicorny === "kaniner", isUnicorny === "har passord"]
+//   ) {
+//     return (
+//       book.Enhj_rninger_eller_kaniner == "kaniner" &&
+//       book.passord == "har passord"
+//     )
+//   } else if (
+//     [isUnicorny === "Enhjørning", isUnicorny === "har passord"]
 
-Kan jeg ha denne syntaxen?
+
+//     ) {
+//     return (
+//       book.Enhj_rninger_eller_kaniner == "Enhjørning" &&
+//       book.passord == "har passord"
+//     )
+//   } else {
+//     return true
+//   }
+// }
+
+
+
+// [isUnicorny === "kaniner", isUnicorny === "har passord"]
+
+// er isUnicorny bare en variabel?
+
+// contains kaniner og && "har passord"
+
+// Kan jeg ha denne syntaxen?
 
 // if (book.Pris === !"no input") {
 //     return
@@ -40,15 +81,3 @@ Kan jeg ha denne syntaxen?
 //   }
 // })
 
-// import React from "react"
-
-// const Toggle = ({ erKaninete, setKanin }) => {
-//   return (
-//     <div>
-//       <button onClick={() => setKanin(!erKaninete)}>Kaninete bøker</button>
-//       {erKaninete && <h2>Kaninete bøker</h2>}
-//     </div>
-//   )
-// }
-
-// export default Toggle
