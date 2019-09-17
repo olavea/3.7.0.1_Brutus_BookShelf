@@ -1,13 +1,13 @@
-import React from "react"
-import { makeStyles } from "@material-ui/core/styles"
-import Card from "@material-ui/core/Card"
-import CardActionArea from "@material-ui/core/CardActionArea"
-import CardActions from "@material-ui/core/CardActions"
-import CardContent from "@material-ui/core/CardContent"
-import CardMedia from "@material-ui/core/CardMedia"
-import Button from "@material-ui/core/Button"
-import Typography from "@material-ui/core/Typography"
-import Chip from "@material-ui/core/Chip"
+import React from "react";
+import { makeStyles } from "@material-ui/core/styles";
+import Card from "@material-ui/core/Card";
+import CardActionArea from "@material-ui/core/CardActionArea";
+import CardActions from "@material-ui/core/CardActions";
+import CardContent from "@material-ui/core/CardContent";
+import CardMedia from "@material-ui/core/CardMedia";
+import Button from "@material-ui/core/Button";
+import Typography from "@material-ui/core/Typography";
+import Chip from "@material-ui/core/Chip";
 
 const useStyles = makeStyles(theme => ({
   button: {
@@ -22,10 +22,10 @@ const useStyles = makeStyles(theme => ({
   chip: {
     margin: theme.spacing(1),
   },
-}))
+}));
 
 export default function BookCard({ book, erKaninete, setKanin }) {
-  const classes = useStyles()
+  const classes = useStyles();
 
   return (
     <Card className={classes.card}>
@@ -40,6 +40,11 @@ export default function BookCard({ book, erKaninete, setKanin }) {
             {book.Norsk_navn}
           </Typography>
           <Typography variant="body2" color="textSecondary" component="p">
+            <Chip
+              label={book.Navn__lest_inn_for}
+              onClick={() => setKanin(book.Navn__lest_inn_for)}
+              className={classes.chip}
+            />
             <Chip
               label={book.Enhj_rninger_eller_kaniner}
               onClick={() => setKanin(book.Enhj_rninger_eller_kaniner)}
@@ -81,5 +86,5 @@ export default function BookCard({ book, erKaninete, setKanin }) {
         </Button>
       </CardActions>
     </Card>
-  )
+  );
 }
