@@ -21,7 +21,8 @@
     "gatsby-source-filesystem": "^2.1.9",
     "gatsby-transformer-csv": "^2.1.2",
     "react": "^16.9.0",
-    "react-dom": "^16.9.0"
+    "react-dom": "^16.9.0",
+    "react-use-auth": "^0.5.3"
   },
   "devDependencies": {
     "prettier": "^1.18.2"
