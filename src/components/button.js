@@ -23,5 +23,5 @@ Button.propTypes = {
 };
 
 Button.defaultProps = {
-  scale: "normal",
+  scale: "big",
 };
