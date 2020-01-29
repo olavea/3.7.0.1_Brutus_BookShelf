@@ -18,7 +18,7 @@ export default function BookBar() {
       <AppBar position="static" color="default">
         <Toolbar>
           <Typography variant="h6" color="primary">
-            Bøker bygget om av og for barn
+            Bøker bygget av og for barn
           </Typography>
         </Toolbar>
       </AppBar>
